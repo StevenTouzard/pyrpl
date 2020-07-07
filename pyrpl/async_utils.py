@@ -138,6 +138,8 @@ class PyrplFuture(Future):
         try: #  concurrent.futures.Future (python 2)
             return super(PyrplFuture, self).result(timeout=0)
         except TypeError: #  asyncio.Future (python 3)
+            # added this line to fix InvalidStateError when calibrating
+            sleep(0.3)
             return super(PyrplFuture, self).result()
 
     def _exit_loop(self, x=None):
