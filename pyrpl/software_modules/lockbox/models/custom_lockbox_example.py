@@ -21,7 +21,7 @@ class CustomInputClass(InputSignal):
     # Please refer to the Lockbox example for more explanations on this.
     _setup_attributes = ["custom_gain_attribute"]
     _gui_attributes = ["custom_gain_attribute"]
-    custom_gain_attribute = FloatProperty(default=1.0,
+    custom_gain_attribute = FloatProperty(default=1.,
                                           min=-1e10,
                                           max=1e10,
                                           increment=0.01,
